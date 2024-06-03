@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RendezVousController;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+Route::get('/', [RendezVousController::class, 'index'])->name('home');
+Route::get('/ajout', [RendezVousController::class, 'create']);
+Route::post('/ajout', [RendezVousController::class, 'enregistrer'])->name('enregistrer');
