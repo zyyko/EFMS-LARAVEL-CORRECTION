@@ -16,10 +16,3 @@ use App\Http\Controllers\FormController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Controle laravel 1 :
-// Route::get("/home", [LaravelController::class, "index"]);
-// Route::get("/affichage", [LaravelController::class, "show"])->name("affichage")
-// ->middleware(Middleware1::class, Middleware2::class, Middleware3::class);
-
-Route::resource('Produit', FormController::class);
