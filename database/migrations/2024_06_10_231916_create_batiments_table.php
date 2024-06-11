@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produits', function (Blueprint $table) {
+        Schema::create('batiments', function (Blueprint $table) {
             $table->id();
-            $table->string('designation');
-            $table->double('prix');
+            $table->string('nom');
+            $table->string('adresse');
+            $table->unsignedBigInteger('id_propriétaire');
+            $table->boolean('entré_principale')->default(1);
+            $table->boolean('entré_secondaire');
+            $table->integer('nbApptDispo');
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produits');
+        Schema::dropIfExists('batiments');
     }
 };
